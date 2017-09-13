@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>kalkulator sederhana</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <style>
+            .header {
+                background-color: #fff;
+                height: 80px;
+            }
+            
+            .content {
+                background-color: #fff;
+                height: 500px;
+                padding: 20px;
+            }
+            
+            .footer {
+                background-color: #fff;
+                height: 30px;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="header">
+
+    </div>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+            </div>
+
+    <div class="content row">
+        <div class="col-md-6 col-sm-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1>Kalkulator</h1>
+                </div>
+                <div class="panel-body">
+                    <form action="/" method="GET" name="form1">
+                        <div class="form-group">
+                            <label>Angka 1</label>
+                            <input type="number" id="angka1" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Angka 2</label>
+                            <input type="number" id="angka2" class="form-control">
+                        </div>
+
+                        <select name="opt"></p>
+ 							<option value="tambah"> + </option>
+ 							<option value="kurang"> - </option>
+ 							<option value="kali"> * </option>
+ 							<option value="bagi"> / </option>
+							</select>
+                        <button class="btn btn-primary" type="button" onclick="hitung()">Hitung</button>
+                        <button class="btn btn-primary" type="button" onclick="reset()">Clear</button>
+
+
+			<div class="form-group">
+                            <label for="nama">Hasil</label>
+                            <input type="text" id="hasil" disabled="true" class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+function hitung(){
+	var myForm = document.form1;
+	var angka1=eval(myForm.angka1.value);
+	var angka2=eval(myForm.angka2.value);
+	var pil= myForm.opt.value;
+	if (pil == "tambah") {
+	var z = angka1 + angka2;
+ 	}else if (pil == "kurang") {
+	var z = angka1 - angka2;
+ 	} else if (pil == "kali") {
+	var z = angka1 * angka2;
+ 	} else if (pil == "bagi") {
+	var z = angka1 / angka2;
+ 	}
+ 	myForm.hasil.value = z;
+ 	myForm.angka1.value = "";
+ 	myForm.angka2.value = "";
+	}
+	function reset(){
+	document.form1.reset();
+}
+
+</script>
+
+    <div class="footer">
+    <center>
+    	@ariyandns
+    </center>
+    </div>
+</body>
+
+</html>
